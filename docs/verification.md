@@ -1,21 +1,21 @@
 # Verification record
 
-검증일: 2026-09-29. Windows, Python 3.12.14에서 실행했습니다.
+검증일: 2026-09-29. 로컬 Windows와 GitHub Actions의 Ubuntu/PostgreSQL 환경에서 확인했습니다.
 
 | 항목 | 결과 | 의미 / 제한 |
 |---|---|---|
-| 단위·API 테스트 | **35 passed** | 데이터 검증, 적재 원자성/idempotence, CRP 계산, 시간·입원·단위 경계, 요청 검증 |
-| PostgreSQL 통합 테스트 | **7 skipped** | 현재 PC에 Docker/테스트 PostgreSQL 실행 환경 없음 |
-| 실제 모델 smoke test | **다운로드 단계 실패** | Hugging Face 모델 CDN의 TLS 인증서 신뢰 오류; 추론 단계에 도달하지 못함 |
-| 실제 모델 + PostgreSQL 평가 | **미실행** | 모델 다운로드와 PostgreSQL이 모두 필요 |
+| 로컬 단위·API 테스트 | **35 passed** | 데이터 검증, 적재 원자성, CRP 계산, 시간·입원·단위 경계, 요청 검증 |
+| GitHub Actions 단위·PostgreSQL 통합 테스트 | **42 passed, 0 skipped** | 실제 PostgreSQL/pgvector 서비스에서 7개 통합 테스트 포함 |
+| 실제 모델 smoke test | **GitHub Actions 통과** | 고정 리비전의 다국어 모델을 내려받아 한국어/영어 임베딩 확인 |
+| 실제 모델 + PostgreSQL 평가 | **GitHub Actions 통과** | 8개 합성 golden case 전부 기대 환자 집합 일치 |
 | Ruff 정적 검사 | **통과** | 코드 오류·import·스타일 검사 |
 | Ruff format | **적용** | 전체 코드 정리 |
 | Python compileall | **통과** | 소스와 테스트 문법 검사 |
 | 합성 데이터 재생성 비교 | **통과** | 저장 JSON과 생성 함수의 검증된 내용 일치 |
-| Compose/CI YAML 파싱 | **통과** | 문법 파싱만 확인; Docker 실행 성공을 의미하지 않음 |
+| Docker Compose 설정 | **GitHub Actions 통과** | `docker compose config --quiet` |
 | UTF-8 텍스트 검사 | **통과** | 한국어 파일 decode 및 replacement character 검사 |
-| Docker 이미지 빌드/API 통합 기동 | **미실행** | Docker CLI 없음 |
-| GitHub Actions | **설정 작성, 실행 미확인** | 원격 저장소 게시 전 |
+| Docker 앱 이미지 빌드 | **GitHub Actions 통과** | `docker build --target app` |
+| Compose 전체 기동·API 호출 | **미실행** | 로컬 Docker CLI 없음; CI는 이미지 빌드와 PostgreSQL 통합 테스트를 각각 실행 |
 
 로컬 검사 명령:
 
@@ -26,18 +26,19 @@ ruff format --check .
 python -m compileall -q src tests
 ```
 
-테스트 결과의 `7 skipped`는 통과로 집계하지 않았습니다. 의미 검색 테스트 두 개는 위 명령에서 제외됩니다. 별도로 실행한 실제 모델 smoke test는 외부 모델 다운로드 단계에서 실패했습니다. 의미 검색의 Recall/MRR 값은 아직 측정하지 않았으며 예상값을 측정값처럼 제시하지 않았습니다.
+로컬에서 통합 테스트 7개는 PostgreSQL 부재로 건너뛰었으며 통과로 집계하지 않았습니다. GitHub Actions에서는 같은 테스트를 실제 PostgreSQL/pgvector에 연결해 모두 통과했습니다. 의미 검색 테스트 두 개도 별도 수동 실행에서 통과했습니다.
 
-모델 다운로드는 기본 방식, 일반 HTTPS 방식, Windows 신뢰 저장소 활용 방식으로 확인했으며 인증서 오류가 지속됐습니다. TLS 검증을 끄지 않았습니다. 신뢰할 수 있는 CA 설정과 Hugging Face 모델 CDN 접근이 가능한 환경에서 다시 실행해야 합니다. 애플리케이션 코드에 이 PC의 인증서 설정을 포함하지 않았습니다.
+로컬 Windows에서는 Hugging Face 모델 CDN의 인증서 신뢰 오류로 다운로드가 실패했습니다. TLS 검증을 끄지 않았습니다. GitHub Actions에서는 같은 모델 리비전을 정상 다운로드하여 검증했습니다. 애플리케이션 코드에 이 PC의 인증서 설정을 포함하지 않았습니다.
+
+실제 모델 평가의 합성 5개 의미 검색 case에서 macro Recall@k와 MRR은 각각 **1.0**입니다. 전체 8개 case는 [결과 JSON](evaluation-results.json)에 기록했습니다. 작은 수작업 라벨이므로 임상적 유효성이나 부정문 처리 성능을 주장하지 않습니다. 실행 기록: [GitHub Actions](https://github.com/kyungsuPark/medlink-ai/actions/runs/36534028852).
 
 현재 의존성 조합에서 Starlette TestClient의 httpx 사용에 대한 deprecation warning 한 건이 발생했습니다. 테스트 실패는 아니며 추후 TestClient 의존성 업데이트 시 정리할 항목입니다.
 
-## 다음 환경에서 확인할 항목
+## 아직 확인할 항목
 
 ```bash
-docker compose --profile test run --build --rm tests
 docker compose up --build -d api
 docker compose exec api medlink evaluate
 ```
 
-통합 테스트와 실제 평가가 끝나면 이 문서를 실제 결과로 갱신하고 `evaluation.json`을 포트폴리오에 포함하세요. 현재 코드의 의미 검색 목표(Recall@k ≥ 0.7, MRR ≥ 0.8)는 개발 목표이며 검증 완료 수치가 아닙니다.
+Compose 서비스 전체 기동과 실제 HTTP 호출은 아직 확인하지 않았습니다. 이미지 빌드, PostgreSQL 통합 테스트, 모델 평가의 성공과는 별도의 검증 항목입니다.

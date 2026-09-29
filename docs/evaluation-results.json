@@ -1,0 +1,150 @@
+{
+  "embedding_model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2@e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+  "cases": [
+    {
+      "id": "crp-rising-all",
+      "mode": "structured",
+      "actual": [
+        "P001",
+        "P006",
+        "P003"
+      ],
+      "expected": [
+        "P001",
+        "P003",
+        "P006"
+      ],
+      "k": 3,
+      "elapsed_ms": 30.44,
+      "precision_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_set": true
+    },
+    {
+      "id": "crp-strict-delta",
+      "mode": "structured",
+      "actual": [
+        "P001",
+        "P006"
+      ],
+      "expected": [
+        "P001",
+        "P006"
+      ],
+      "k": 2,
+      "elapsed_ms": 7.75,
+      "precision_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_set": true
+    },
+    {
+      "id": "crp-missing-previous",
+      "mode": "structured",
+      "actual": [],
+      "expected": [],
+      "k": 1,
+      "elapsed_ms": 7.97,
+      "precision_at_k": 0.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 0.0,
+      "exact_set": true
+    },
+    {
+      "id": "infection-ko",
+      "mode": "vector",
+      "actual": [
+        "P006",
+        "P001",
+        "P002"
+      ],
+      "expected": [
+        "P001",
+        "P002",
+        "P006"
+      ],
+      "k": 3,
+      "elapsed_ms": 32.33,
+      "precision_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_set": true
+    },
+    {
+      "id": "infection-en",
+      "mode": "vector",
+      "actual": [
+        "P002",
+        "P006",
+        "P001"
+      ],
+      "expected": [
+        "P001",
+        "P002",
+        "P006"
+      ],
+      "k": 3,
+      "elapsed_ms": 26.47,
+      "precision_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_set": true
+    },
+    {
+      "id": "rehabilitation-ko",
+      "mode": "vector",
+      "actual": [
+        "P003"
+      ],
+      "expected": [
+        "P003"
+      ],
+      "k": 1,
+      "elapsed_ms": 28.7,
+      "precision_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_set": true
+    },
+    {
+      "id": "hybrid-infection",
+      "mode": "hybrid",
+      "actual": [
+        "P006",
+        "P001"
+      ],
+      "expected": [
+        "P001",
+        "P006"
+      ],
+      "k": 2,
+      "elapsed_ms": 31.32,
+      "precision_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_set": true
+    },
+    {
+      "id": "hybrid-consult",
+      "mode": "hybrid",
+      "actual": [
+        "P006",
+        "P001"
+      ],
+      "expected": [
+        "P001",
+        "P006"
+      ],
+      "k": 2,
+      "elapsed_ms": 29.72,
+      "precision_at_k": 1.0,
+      "recall_at_k": 1.0,
+      "reciprocal_rank": 1.0,
+      "exact_set": true
+    }
+  ],
+  "semantic_macro_recall_at_k": 1.0,
+  "semantic_mrr": 1.0,
+  "note": "Hand-written synthetic relevance labels; not clinical validation. Similarity ranks mentions and may retrieve negated statements."
+}

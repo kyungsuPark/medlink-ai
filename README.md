@@ -79,7 +79,7 @@ docker compose cp api:/app/reports/evaluation.json ./evaluation.json
 
 8개 golden case의 실제/기대 환자, Precision@k, Recall@k, reciprocal rank, 응답 시간을 기록합니다. 의미 검색의 평균 Recall@k와 MRR을 별도로 집계합니다. 이 소규모 합성 평가가 임상적 유효성을 입증하지는 않습니다.
 
-GitHub Actions는 push/PR마다 코드 검사, 단위/API/실제 PostgreSQL 통합 테스트, Docker 이미지 빌드를 실행하도록 구성했습니다. Actions의 `workflow_dispatch`에서 `semantic=true`를 선택하면 실제 모델 평가도 실행합니다. CI 실행 결과는 저장소에 게시한 후 확인해야 합니다.
+GitHub Actions는 push/PR마다 코드 검사, 단위/API/실제 PostgreSQL 통합 테스트, Docker 이미지 빌드를 실행합니다. [검증 실행](https://github.com/kyungsuPark/medlink-ai/actions/runs/36534028852)에서 테스트 42개와 이미지 빌드가 통과했습니다. `workflow_dispatch`의 `semantic=true`로 실행한 실제 모델 평가에서는 8개 합성 golden case의 기대 환자 집합이 모두 일치했고, 의미 검색 5개 case의 macro Recall@k/MRR이 각각 1.0이었습니다. [평가 결과](docs/evaluation-results.json)는 소규모 합성 데이터의 수치이며 임상적 유효성의 근거가 아닙니다. Compose 전체 기동과 HTTP 호출은 아직 확인 전입니다.
 
 로컬 Python 개발(Python 3.12 권장):
 
