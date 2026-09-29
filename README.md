@@ -143,6 +143,6 @@ docs/              # 아키텍처, 데이터 계약, 의사결정, 1주 계획, 
 
 초기 스키마는 `create_all`로 생성합니다. 버전이 바뀐 기존 DB를 자동 마이그레이션하지 않습니다. 모델 이름/리비전이 바뀌면 전체 재임베딩이 필요합니다. 기본 `EMBEDDING_REVISION`은 모델 commit SHA로 고정했습니다. 모델을 바꿀 때는 고정된 새 리비전과 새 데이터베이스를 사용하세요.
 
-GitHub에 올릴 프로젝트 루트는 이 README가 있는 `medlink-ai/`입니다. 상위 ChatGPT 동기화 폴더와 `sources/`는 포함하지 않습니다. 원격 저장소 생성/업로드는 이 산출물에 포함하지 않았습니다.
+GitHub 프로젝트 루트는 이 README가 있는 `medlink-ai/`입니다. 상위 ChatGPT 동기화 폴더와 `sources/`는 포함하지 않습니다. 저장소: [kyungsuPark/medlink-ai](https://github.com/kyungsuPark/medlink-ai).
 
 참고한 공식 문서: [pgvector Python/SQLAlchemy](https://github.com/pgvector/pgvector-python), [SentenceTransformer API](https://www.sbert.net/docs/package_reference/sentence_transformer/model.html), [다국어 모델 카드](https://huggingface.co/sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2).
