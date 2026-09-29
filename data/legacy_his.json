@@ -1,0 +1,529 @@
+{
+  "dataset_id": "synthetic-his-v1",
+  "synthetic": true,
+  "patients": [
+    {
+      "PT_NO": "P001",
+      "PT_NM": "Synthetic patient 001"
+    },
+    {
+      "PT_NO": "P002",
+      "PT_NM": "Synthetic patient 002"
+    },
+    {
+      "PT_NO": "P003",
+      "PT_NM": "Synthetic patient 003"
+    },
+    {
+      "PT_NO": "P004",
+      "PT_NM": "Synthetic patient 004"
+    },
+    {
+      "PT_NO": "P005",
+      "PT_NM": "Synthetic patient 005"
+    },
+    {
+      "PT_NO": "P006",
+      "PT_NM": "Synthetic patient 006"
+    },
+    {
+      "PT_NO": "P007",
+      "PT_NM": "Synthetic patient 007"
+    },
+    {
+      "PT_NO": "P008",
+      "PT_NM": "Synthetic patient 008"
+    },
+    {
+      "PT_NO": "P009",
+      "PT_NM": "Synthetic patient 009"
+    },
+    {
+      "PT_NO": "P010",
+      "PT_NM": "Synthetic patient 010"
+    },
+    {
+      "PT_NO": "P011",
+      "PT_NM": "Synthetic patient 011"
+    },
+    {
+      "PT_NO": "P012",
+      "PT_NM": "Synthetic patient 012"
+    }
+  ],
+  "admissions": [
+    {
+      "ADM_NO": "A001",
+      "PT_NO": "P001",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A002",
+      "PT_NO": "P002",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A003",
+      "PT_NO": "P003",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A004",
+      "PT_NO": "P004",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": "2026-09-28T10:00:00Z",
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A005",
+      "PT_NO": "P005",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A006",
+      "PT_NO": "P006",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A007",
+      "PT_NO": "P007",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A008",
+      "PT_NO": "P008",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A009",
+      "PT_NO": "P009",
+      "IN_DTM": "2026-09-28T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A010",
+      "PT_NO": "P010",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A011",
+      "PT_NO": "P011",
+      "IN_DTM": "2026-09-20T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A012",
+      "PT_NO": "P012",
+      "IN_DTM": "2026-09-29T09:00:00Z",
+      "OUT_DTM": null,
+      "WARD_CD": "W01"
+    },
+    {
+      "ADM_NO": "A009-OLD",
+      "PT_NO": "P009",
+      "IN_DTM": "2026-09-23T00:00:00Z",
+      "OUT_DTM": "2026-09-27T23:00:00Z",
+      "WARD_CD": "W02"
+    }
+  ],
+  "labs": [
+    {
+      "RSLT_NO": "L-A001-1",
+      "ADM_NO": "A001",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 10.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-27T08:00:00Z",
+      "VERIFY_DTM": "2026-09-27T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A001-2",
+      "ADM_NO": "A001",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 30.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A002-1",
+      "ADM_NO": "A002",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 50.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-27T08:00:00Z",
+      "VERIFY_DTM": "2026-09-27T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A002-2",
+      "ADM_NO": "A002",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 20.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A003-1",
+      "ADM_NO": "A003",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 5.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-27T08:00:00Z",
+      "VERIFY_DTM": "2026-09-27T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A003-2",
+      "ADM_NO": "A003",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 15.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A004-1",
+      "ADM_NO": "A004",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 10.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-27T08:00:00Z",
+      "VERIFY_DTM": "2026-09-27T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A004-2",
+      "ADM_NO": "A004",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 50.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A005-2",
+      "ADM_NO": "A005",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 8.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A006-1",
+      "ADM_NO": "A006",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 1.0,
+      "UNIT": "mg/dL",
+      "COLLECT_DTM": "2026-09-27T08:00:00Z",
+      "VERIFY_DTM": "2026-09-27T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A006-2",
+      "ADM_NO": "A006",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 3.0,
+      "UNIT": "mg/dL",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A007-1",
+      "ADM_NO": "A007",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 20.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-27T08:00:00Z",
+      "VERIFY_DTM": "2026-09-27T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A007-2",
+      "ADM_NO": "A007",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 10.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A008-1",
+      "ADM_NO": "A008",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 20.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-27T08:00:00Z",
+      "VERIFY_DTM": "2026-09-27T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A008-2",
+      "ADM_NO": "A008",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 10.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A009-2",
+      "ADM_NO": "A009",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 9.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T10:00:00Z",
+      "VERIFY_DTM": "2026-09-28T10:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A010-1",
+      "ADM_NO": "A010",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 20.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-27T08:00:00Z",
+      "VERIFY_DTM": "2026-09-27T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A010-2",
+      "ADM_NO": "A010",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 10.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A011-1",
+      "ADM_NO": "A011",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 10.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A011-2",
+      "ADM_NO": "A011",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 30.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T08:00:00Z",
+      "VERIFY_DTM": "2026-09-28T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A012-1",
+      "ADM_NO": "A012",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 1.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-29T10:00:00Z",
+      "VERIFY_DTM": "2026-09-29T10:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A012-2",
+      "ADM_NO": "A012",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 8.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-30T08:00:00Z",
+      "VERIFY_DTM": "2026-09-30T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A007-future",
+      "ADM_NO": "A007",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 100.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-29T08:00:00Z",
+      "VERIFY_DTM": "2026-09-29T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A008-pending",
+      "ADM_NO": "A008",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 100.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T09:00:00Z",
+      "VERIFY_DTM": "2026-09-28T09:00:00Z",
+      "STATUS": "P"
+    },
+    {
+      "RSLT_NO": "L-A008-cancelled",
+      "ADM_NO": "A008",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 200.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T10:00:00Z",
+      "VERIFY_DTM": "2026-09-28T10:00:00Z",
+      "STATUS": "C"
+    },
+    {
+      "RSLT_NO": "L-A009-OLD-1",
+      "ADM_NO": "A009-OLD",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 1.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-26T08:00:00Z",
+      "VERIFY_DTM": "2026-09-26T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A009-OLD-2",
+      "ADM_NO": "A009-OLD",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 100.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-27T08:00:00Z",
+      "VERIFY_DTM": "2026-09-27T08:00:00Z",
+      "STATUS": "F"
+    },
+    {
+      "RSLT_NO": "L-A010-late",
+      "ADM_NO": "A010",
+      "ITEM_CD": "CRP",
+      "RSLT_VAL": 100.0,
+      "UNIT": "mg/L",
+      "COLLECT_DTM": "2026-09-28T09:00:00Z",
+      "VERIFY_DTM": "2026-09-29T08:00:00Z",
+      "STATUS": "F"
+    }
+  ],
+  "documents": [
+    {
+      "DOC_NO": "N001",
+      "ADM_NO": "A001",
+      "DOC_KIND": "consult",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "감염 의심으로 발열과 오한을 평가함. 혈액 배양 검사 후 항생제 치료를 시작함."
+    },
+    {
+      "DOC_NO": "N002",
+      "ADM_NO": "A002",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "Infection with fever. Receiving antibiotics; inflammatory markers are improving."
+    },
+    {
+      "DOC_NO": "N003",
+      "ADM_NO": "A003",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "무릎 수술 후 재활 중. 보행 연습과 통증 조절을 진행하며 식사 섭취 양호함."
+    },
+    {
+      "DOC_NO": "N004",
+      "ADM_NO": "A004",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "발열과 감염으로 항생제를 투여한 뒤 상태가 호전되어 퇴원함."
+    },
+    {
+      "DOC_NO": "N005",
+      "ADM_NO": "A005",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "어지럼증 평가를 위해 입원함. 보행 시 균형을 확인하고 수분 섭취를 권고함."
+    },
+    {
+      "DOC_NO": "N006",
+      "ADM_NO": "A006",
+      "DOC_KIND": "consult",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "협진: 폐렴 의심, 발열 및 기침 지속. 배양 검사와 항생제 치료 반응을 관찰함."
+    },
+    {
+      "DOC_NO": "N007",
+      "ADM_NO": "A007",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "두통이 호전됨. 신경학적 변화 없이 안정적인 상태임."
+    },
+    {
+      "DOC_NO": "N008",
+      "ADM_NO": "A008",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "발열 없고 감염 소견 없음. 항생제 투여 계획 없음."
+    },
+    {
+      "DOC_NO": "N009",
+      "ADM_NO": "A009",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "재입원 후 수면과 식사 상태 확인. 현재 입원 검사 결과는 한 건임."
+    },
+    {
+      "DOC_NO": "N010",
+      "ADM_NO": "A010",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "피로감에 대해 경과 관찰 중. 추가 검사 결과는 아직 확정되지 않음."
+    },
+    {
+      "DOC_NO": "N011",
+      "ADM_NO": "A011",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-28T09:30:00Z",
+      "BODY": "동일 검체 시각의 중복 검사 결과 확인이 필요함."
+    },
+    {
+      "DOC_NO": "N012",
+      "ADM_NO": "A012",
+      "DOC_KIND": "progress",
+      "SIGN_DTM": "2026-09-29T10:00:00Z",
+      "BODY": "향후 입원 건에 작성된 기록. 감염 의심으로 항생제 치료 예정."
+    },
+    {
+      "DOC_NO": "N009-OLD",
+      "ADM_NO": "A009-OLD",
+      "DOC_KIND": "consult",
+      "SIGN_DTM": "2026-09-27T09:00:00Z",
+      "BODY": "이전 입원 당시 감염과 발열로 항생제 치료함."
+    },
+    {
+      "DOC_NO": "N003-FUTURE",
+      "ADM_NO": "A003",
+      "DOC_KIND": "consult",
+      "SIGN_DTM": "2026-09-29T09:00:00Z",
+      "BODY": "다음 날 감염 의심 기록. 발열과 항생제 치료."
+    }
+  ]
+}

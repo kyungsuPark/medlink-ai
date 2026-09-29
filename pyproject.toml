@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "medlink-ai"
+version = "0.1.0"
+description = "Synthetic HIS integration and evidence-first clinical retrieval"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi>=0.115,<1", "uvicorn[standard]>=0.34,<1",
+  "sqlalchemy>=2.0.38,<2.1", "psycopg[binary]>=3.2,<4",
+  "pgvector>=0.3.6,<1", "pydantic-settings>=2.7,<3", "numpy>=1.26,<3",
+]
+
+[project.optional-dependencies]
+embeddings = ["sentence-transformers>=3.4,<6", "torch==2.6.0"]
+dev = ["pytest>=8.3,<9", "httpx>=0.28,<1", "ruff>=0.11,<1"]
+
+[project.scripts]
+medlink = "medlink.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/medlink"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: requires disposable PostgreSQL with pgvector", "semantic: downloads and evaluates the real embedding model"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends"]

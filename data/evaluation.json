@@ -1,0 +1,50 @@
+[
+  {
+    "id": "crp-rising-all",
+    "mode": "structured",
+    "request": {"as_of": "2026-09-28T12:00:00Z", "lookback_hours": 72},
+    "expected": ["P001", "P003", "P006"]
+  },
+  {
+    "id": "crp-strict-delta",
+    "mode": "structured",
+    "request": {"as_of": "2026-09-28T12:00:00Z", "min_delta_mg_l": 10},
+    "expected": ["P001", "P006"]
+  },
+  {
+    "id": "crp-missing-previous",
+    "mode": "structured",
+    "request": {"as_of": "2026-09-28T12:00:00Z", "patient_id": "P005"},
+    "expected": []
+  },
+  {
+    "id": "infection-ko",
+    "mode": "vector",
+    "request": {"as_of": "2026-09-28T12:00:00Z", "query": "감염 의심 발열 항생제 치료", "top_k": 3},
+    "expected": ["P001", "P002", "P006"]
+  },
+  {
+    "id": "infection-en",
+    "mode": "vector",
+    "request": {"as_of": "2026-09-28T12:00:00Z", "query": "Suspected infection with fever and antibiotic treatment", "top_k": 3},
+    "expected": ["P001", "P002", "P006"]
+  },
+  {
+    "id": "rehabilitation-ko",
+    "mode": "vector",
+    "request": {"as_of": "2026-09-28T12:00:00Z", "query": "무릎 수술 후 보행 재활", "top_k": 1},
+    "expected": ["P003"]
+  },
+  {
+    "id": "hybrid-infection",
+    "mode": "hybrid",
+    "request": {"as_of": "2026-09-28T12:00:00Z", "query": "감염 의심 발열 항생제 치료", "top_k": 2},
+    "expected": ["P001", "P006"]
+  },
+  {
+    "id": "hybrid-consult",
+    "mode": "hybrid",
+    "request": {"as_of": "2026-09-28T12:00:00Z", "query": "폐렴 항생제 치료", "note_kind": "consult", "top_k": 2},
+    "expected": ["P001", "P006"]
+  }
+]
