@@ -54,8 +54,8 @@ jobs:
       - name: Package evaluated model cache
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.semantic }}
         run: |
-          tar -C "$HOME/.cache/huggingface" -czf "$RUNNER_TEMP/hf-model-cache.tar.gz" \
-            hub/models--sentence-transformers--paraphrase-multilingual-MiniLM-L12-v2
+          tar -C "$HOME/.cache/huggingface" -czf "$RUNNER_TEMP/hf-model-cache.tar.gz" hub
+          test "$(stat -c %s "$RUNNER_TEMP/hf-model-cache.tar.gz")" -gt 100000000
       - uses: actions/upload-artifact@v4
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.semantic }}
         with:
