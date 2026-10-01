@@ -23,6 +23,7 @@ services:
       EMBEDDING_MODEL: ${EMBEDDING_MODEL:-sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2}
       EMBEDDING_REVISION: ${EMBEDDING_REVISION:-e8f8c211226b894fcb81acc59f3b34ba3efd5f42}
       HF_HOME: /models
+      HF_HUB_OFFLINE: ${HF_HUB_OFFLINE:-0}
     volumes:
       - model_cache:/models
     depends_on:

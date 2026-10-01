@@ -51,6 +51,18 @@ jobs:
           medlink init-db
           medlink seed
           medlink evaluate
+      - name: Package evaluated model cache
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.semantic }}
+        run: |
+          tar -C "$HOME/.cache/huggingface" -czf "$RUNNER_TEMP/hf-model-cache.tar.gz" \
+            hub/models--sentence-transformers--paraphrase-multilingual-MiniLM-L12-v2
+      - uses: actions/upload-artifact@v4
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.semantic }}
+        with:
+          name: hf-model-cache
+          path: ${{ runner.temp }}/hf-model-cache.tar.gz
+          retention-days: 3
+          compression-level: 0
       - uses: actions/upload-artifact@v4
         if: always()
         with:
