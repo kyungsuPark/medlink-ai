@@ -15,9 +15,10 @@
 | Docker Compose 설정 | **GitHub Actions 통과** | `docker compose config --quiet` |
 | UTF-8 텍스트 검사 | **통과** | 한국어 파일 decode 및 replacement character 검사 |
 | Docker 앱 이미지 빌드 | **GitHub Actions 통과** | `docker build --target app` |
-| 로컬 Docker 통합 테스트 | **42 passed, 2 deselected** | 별도 임시 PostgreSQL/pgvector에서 실행; 2개 실제 모델 테스트는 별도 평가 경로 |
+| 로컬 Docker 통합 테스트 | **43 passed, 2 deselected** | 별도 임시 PostgreSQL/pgvector에서 실행; Swagger 정적 파일 회귀 테스트 포함 |
 | Compose 전체 기동 | **통과** | `db` healthy, `init` exit 0, `api` healthy; 합성 환자 12명과 기록 청크 14개 적재 |
 | 실제 HTTP 호출 | **통과** | Structured P001/P006/P003, Vector P006/P001/P002, Hybrid P006/P001 확인 |
+| Swagger 화면 | **로컬 브라우저에서 표시 확인** | JavaScript/CSS를 API가 직접 제공하도록 수정해 외부 CDN 없이 로드 |
 | 로컬 실제 모델 평가 | **통과** | 8개 합성 사례 기대 환자 집합 일치; 의미 검색 5개 사례 macro Recall@k/MRR 각각 1.0 |
 
 로컬 검사 명령:

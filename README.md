@@ -19,6 +19,8 @@ docker compose logs -f init
 - 준비 상태: [Readiness](http://localhost:8000/health/ready)
 - 프로세스 상태: [Liveness](http://localhost:8000/health/live)
 
+Swagger 화면의 JavaScript/CSS는 API가 직접 제공하므로 브라우저에서 외부 CDN에 접속할 필요가 없습니다. 정적 파일은 `swagger-ui-dist` 5.32.11에서 가져왔으며 [Apache 2.0 라이선스](src/medlink/static/LICENSE)를 포함합니다.
+
 ```bash
 docker compose ps -a
 docker compose logs init api

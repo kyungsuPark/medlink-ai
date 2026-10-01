@@ -24,6 +24,16 @@ def test_structured_api_returns_evidence(client):
     assert data["elapsed_ms"] >= 0
 
 
+def test_swagger_assets_are_served_locally(client):
+    page = client.get("/docs")
+    assert page.status_code == 200
+    assert "/static/swagger-ui-bundle.js" in page.text
+    assert "/static/swagger-ui.css" in page.text
+    assert "cdn.jsdelivr.net" not in page.text
+    assert client.get("/static/swagger-ui-bundle.js").status_code == 200
+    assert client.get("/static/swagger-ui.css").status_code == 200
+
+
 @pytest.mark.parametrize(
     "payload",
     [

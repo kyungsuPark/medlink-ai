@@ -1,8 +1,11 @@
 import logging
+from pathlib import Path
 from time import perf_counter
 
 from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from sqlalchemy import func, select, text
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import Session
@@ -17,12 +20,29 @@ from medlink.schemas import SearchResponse, StructuredRequest, VectorRequest
 app = FastAPI(
     title="MedLink AI",
     version="0.1.0",
+    docs_url=None,
     description=(
         "Synthetic HIS retrieval demo. All times require a timezone. "
         "Read-only search; no clinical decisions or arbitrary SQL execution."
     ),
 )
+app.mount(
+    "/static",
+    StaticFiles(directory=Path(__file__).parent / "static"),
+    name="static",
+)
 logger = logging.getLogger("uvicorn.error")
+
+
+@app.get("/docs", include_in_schema=False)
+def docs():
+    return get_swagger_ui_html(
+        openapi_url=app.openapi_url,
+        title=f"{app.title} - Swagger UI",
+        swagger_js_url="/static/swagger-ui-bundle.js",
+        swagger_css_url="/static/swagger-ui.css",
+        swagger_favicon_url="data:,",
+    )
 
 
 @app.exception_handler(SQLAlchemyError)
